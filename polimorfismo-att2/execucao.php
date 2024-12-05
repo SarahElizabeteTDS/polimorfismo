@@ -31,5 +31,5 @@ for ($i=0; $i < 5; $i++)
 
 foreach ($midias as $midia) 
 {
-    print $midia->getTipo() . $midia->getDados() . "\n";
+    print $midia->getTipo() . "\n" . $midia->getDados() . "\n";
 }
