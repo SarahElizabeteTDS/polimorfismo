@@ -4,7 +4,7 @@ require_once("modelos/Midia.php");
 require_once("modelos/Cd.php");
 require_once("modelos/Dvd.php");
 
-$array = array();
+$midias = array();
 
 for ($i=0; $i < 5; $i++) 
 { 
@@ -14,23 +14,22 @@ for ($i=0; $i < 5; $i++)
     if ($tipo == 1) 
     {
         $midia = new Midia(readline("Escreva a descrição: "), readline("Qual foi o preço: "));
-        array_push($array, $midia);
+        array_push($midias, $midia);
     }else if($tipo == 2)
     {
         $cd = new CD(readline("Escreva a descrição: "), readline("Qual foi o preço: "));
-        array_push($array, $cd);
+        array_push($midias, $cd);
     }else if($tipo == 3)
     {
         $dvd = new DVD(readline("Escreva a descrição: "), readline("Qual foi o preço: "));
-        array_push($array, $dvd);
+        array_push($midias, $dvd);
     }else
     {
         print "Valor inválido";
     }
 }
 
-foreach ($array as $midia) 
+foreach ($midias as $midia) 
 {
     print $midia->getTipo() . $midia->getDados() . "\n";
 }
-
